@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GarikProg/Link-shortener/issues"
   },
-  "homepage": "https://github.com/GarikProg/Link-shortener#readme"
+  "homepage": "https://github.com/GarikProg/Link-shortener#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
