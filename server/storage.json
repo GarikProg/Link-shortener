@@ -1,10 +1,4 @@
 {
-  "complexLinks": [
-    { "longLink": "http:/fjehgsjhg.com", "shortLink": "f1q32", "counter": 6 },
-    { "longLink": "http:/igort.com", "shortLink": "wzkqk", "counter": 7 },
-    { "longLink": "wzkqk", "shortLink": "tw7w8", "counter": 0 },
-    { "longLink": "http:/igortjjk.com", "shortLink": "11swh", "counter": 0 }
-  ],
-  "shortLinks": ["f1q32", "wzkqk", "tw7w8", "11swh"],
-  "updatedAt": "2020-11-22T19:50:03.454Z"
+  "complexLinks": [],
+  "shortLinks": []  
 }

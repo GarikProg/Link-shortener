@@ -1,23 +1,22 @@
 const express = require('express');
-
-const { getLinks, createLink, updateCounter } = require('./fileStorage.js');
+require('dotenv').config();
+const { connectPostgres } = require('./DB/connectPostgres.js');
+const { syncModel } = require('./DB/modelLink.js');
+const linksRouter = require('./router/linksRouter.js');
+const indexRouter = require('./router/indexRouter.js');
 
 const app = express();
+
+connectPostgres();
+syncModel();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/links', (req, res) => {
-  res.json(getLinks());
+app.use('/links', linksRouter);
+app.use('/', indexRouter);
+app.get('*', (req, res) => {
+  res.status(404).end();
 });
 
-app.post('/links', (req, res) => {
-  res.json(createLink(req.body.longLink));
-});
-
-app.get('/:id', (req, res) => {
-  res.json(updateCounter(req.params.id));
-});
-
-const port = process.env.PORT || 3001;
-app.listen(port, console.log(`You listen port ${port}`));
+module.exports = app;
