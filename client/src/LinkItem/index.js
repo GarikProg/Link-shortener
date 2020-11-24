@@ -5,7 +5,7 @@ export default function LinkItem(props) {
   const { shortLink, longLink, counter } = props;
   return (
      <TableRow>
-      <TableCell>{shortLink}</TableCell>
+      <TableCell>http://localhost:3001/{shortLink}</TableCell>
       <TableCell>{longLink}</TableCell>
       <TableCell>{counter}</TableCell>
     </TableRow>
