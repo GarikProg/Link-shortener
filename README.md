@@ -22,16 +22,15 @@
 ## До запуска приложения необходимо сформировать .env (в директории /server) файл со следующими полями:
 - PORT - 'номер порта'
 - URL_DB - 'ссылка для подключения субд PostgresSQL'
-- HOST - 'наименование хоста'
 
 ## Для запуска приложения необходимо ввести следующие комнады:
 ```console
-`npm run build script
-`npm start
+npm run build script
+npm start
 ```
 
 ## Для запуска консольной утилиты необходимо (хост и порт указан по умолчанию):
 ```console
-`cd console
-`node console.js  --get-stats --address=http://localhost:3001
+cd console
+node console.js  --get-stats --address=http://localhost:3001
 ```
