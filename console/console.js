@@ -1,18 +1,24 @@
-const readline = require('readline');
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const command = process.argv[2];
+const hostInput = process.argv[3].split("=")[1];
 
-rl.question(`Enter command: stats, create`, (answer) => {
-  // TODO: Log the answer in a database
-  switch(answer) {
-    case 'stats': {
-      fetch('http://localhost:3001/links').then(r => r.json()).then(r => console.table(r))  
-    }
-    default: console.log('no such command');
-  } 
+const getStats = async (host) => {
+  try {
+    const response = await fetch(`${host}/links`);
+    const stats = await response.json();
+    console.table(stats);
+  } catch (error) {
+    console.log(
+      "Возникла ошибка при обращении к серверу, проверьте правильность вводимых данных (наименование хоста)"
+    );
+  }
+};
 
-});
+switch (command) {
+  case "--get-stats":
+    getStats(hostInput);
+    break;
+  default:
+    console.log("Такой команды не существует");
+}
