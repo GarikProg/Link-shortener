@@ -30,5 +30,5 @@ HOST - 'наименование хоста'
 
 Для запуска консольной утилиты необходимо (хост и порт указан по умолчанию):
 
-`cd
+`cd console
 `node console.js  --get-stats --address=http://localhost:3001
