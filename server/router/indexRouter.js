@@ -13,7 +13,7 @@ router.get('/:shortLink', async (req, res) => {
     if (link) {
       link.counter += 1;
       await link.save();
-      res.status(200).json(link);
+      res.redirect(link.longLink);
     } else {
       res.status(404).end();
     }
