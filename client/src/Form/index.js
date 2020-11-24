@@ -75,7 +75,7 @@ function Form() {
       </form>
       {outPut ? (
         <List>
-          <ListItem button>Id Короткой ссылки: http://localhost:3001/{outPut.shortLink}</ListItem>
+          <ListItem >Id Короткой ссылки: http://localhost:3001/{outPut.shortLink}</ListItem>
           <ListItem>Оригинальный адрес: {outPut.longLink}</ListItem>
           <ListItem>
             Количество переходов по короткой ссылке - {outPut.counter}
