@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const path = require('path');
 const { connectPostgres } = require('./DB/connectPostgres.js');
 const { syncModel } = require('./DB/modelLink.js');
 const linksRouter = require('./router/linksRouter.js');
@@ -12,6 +13,7 @@ syncModel();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.resolve('../client/build/')));
 
 app.use('/links', linksRouter);
 app.use('/', indexRouter);
