@@ -19,7 +19,11 @@ const Link = sequelize.define(
 );
 
 const syncModel = async () => {
-  await Link.sync({ force: false });
+  try {
+    await Link.sync({ force: false });
+  } catch (error) {
+    console.error('Unable to synchronize with database:', error);
+  }
 };
 
 module.exports = { Link, syncModel };
