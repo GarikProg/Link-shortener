@@ -20,7 +20,7 @@
 - Создание консольной утилиты для взаимодействия с API.
 
 ## До запуска приложения необходимо сформировать .env (в директории /server) файл со следующими полями:
-- URL_DB - 'ссылка для подключения субд PostgresSQL'
+- URL_DB - 'ссылка для подключения субд PostgresSQL'  
 Пример: URL_DB=postgres://jpdbtcdz:MPqX_DqQhkLWYA0q0HJ9AuTgZbWJuaWF@hattie.db.elephantsql.com:5432/jpdbtcdz
 
 ## Для запуска приложения необходимо ввести следующие комнады:
